@@ -37,6 +37,22 @@ public class BankamizBannerControls extends SeleniumMethods {
         Assert.assertEquals(driver.getCurrentUrl(),Yatirimciiliskileridevamilink);
         FindElement(By.xpath(YatirimciiliskileriDevamiBaslik)).isDisplayed();
         Assert.assertEquals(gettext(By.xpath(YatirimciiliskileriDevamiBaslik)),"Üçüncü çeyrekte de sektörün ikinci büyük bankası yine Halkbank oldu");
+        driver.navigate().back();
+
+        FindElement(By.xpath(HaberlerDuyurular)).isDisplayed();
+        Assert.assertEquals("Haberler/Duyurular",FindElement(By.xpath(HaberlerDuyurular)).getText());
+        FindElement(By.xpath(HaberlerDuyurularDevam)).isDisplayed();
+        FindElement(By.xpath(HaberlerDuyurularDevam)).click();
+        FindElement(By.xpath(HaberlerDuyurularDevamiTitle)).isDisplayed();
+        Assert.assertEquals(HaberlerDuyurularDevamiTitleText,FindElement(By.xpath(HaberlerDuyurularDevamiTitle)).getText());
+        driver.navigate().back();
+
+        FindElement(By.xpath(InsanKaynaklariBannerTitle)).isDisplayed();
+        FindElement(By.xpath(InsanKaynaklariDevamiButton)).isDisplayed();
+        FindElement(By.xpath(InsanKaynaklariDevamiButton)).click();
+        FindElement(By.xpath(InsankaynaklariDevamiPageVeriyText)).isDisplayed();
+        String VerifyText= FindElement(By.xpath(InsankaynaklariDevamiPageVeriyText)).getText();
+        Assert.assertEquals(VerifyText,FindElement(By.xpath(InsankaynaklariDevamiPageVeriyText)).getText());
     }
 
 

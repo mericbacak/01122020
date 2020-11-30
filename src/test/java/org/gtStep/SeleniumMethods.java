@@ -43,6 +43,10 @@ public class SeleniumMethods {
     driver.close();
     driver.switchTo().window(tabs2.get(0));
    }
+  public void YeniAcilanSekmeyeOdaklan(){
+    ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+    driver.switchTo().window(tabs2.get(1));
+  }
 
   @After
   public void close() throws InterruptedException {
